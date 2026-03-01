@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&display=swap');
+
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 1700px;
+    height: 1080px;
+    background-color: #acacac;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+.wallpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2000px;
+    height: 2000px;
+    filter: blur(20px) brightness(0.3);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.circle,.circle2,.circle3{
+    position: absolute;
+    top: -400px;
+    left: -140px;
+    width: 1358px;
+    height: 1358px;
+    border-radius: 100%;
+    transform: scale(1.055);
+}
+
+.circle2{
+    transform: scale(1.11);
+}
+
+.circle3{
+    transform: scale(1.165);
+}
+
+.CD {
+    position: absolute;
+    top: -400px;
+    left: 0px;
+    width: 1080px;
+    height: 1358px;
+}
+
+.CDrotate {
+    position: absolute;
+    top: 0px;
+    left: -140px;
+    transform-origin: 50% 50%;
+    width: 1358px;
+    height: 1358px;
+    border-radius: 100%;
+    overflow: hidden;
+    animation: CDplay 20s infinite linear;
+    animation-play-state: paused;
+}
+
+#CDImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+    display: none;
+}
+
+.logowrap {
+    position: absolute;
+    bottom: 1%;
+    left: 0%;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    display: none;
+}
+
+#logoImg {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1);
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    -webkit-mask-image: linear-gradient(to bottom, #ffffffc5, #ffffff00);
+}
+
+.wave {
+    position: absolute;
+    top: 1350px;
+    left: 90px;
+    width: 900px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    clip-path: polygon(0 0, 100% 0, 100% 9%, 0 9%, 0 12%, 100% 12%, 100% 22%, 0 22%, 0 25%, 100% 25%, 100% 35%, 0 35%, 0 38%, 100% 38%, 100% 48%, 0 48%, 0 51%, 100% 51%, 100% 61%, 0 61%, 0 64%, 100% 64%, 100% 74%, 0 74%, 0 77%, 100% 77%, 100% 87%, 0 87%, 0 90%, 100% 90%, 100% 100%, 0 100%);
+}
+
+#canvas {
+    position: absolute;
+    left: -8075px;
+}
+
+.audio_progress {
+    position: absolute;
+    top: 1565px;
+    left: 8%;
+    width: 84%;
+    height: 70px;
+    pointer-events: none;
+}
+
+#progress_bg {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    margin: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.progress_dotBox {
+    position: absolute;
+    top: 13.5px;
+    width: calc(100% - 43px);
+    height: 43px;
+}
+
+#progress_dot {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    background-color: #f2f2f2;
+}
+
+#progress_bar {
+    position: absolute;
+    top: -5px;
+    left: -100%;
+    margin: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+}
+
+.timer {
+    position: absolute;
+    top: 1640px;
+    left: 8%;
+    width: 84%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.timer div {
+    color: #a5a5a5;
+    line-height: 1;
+    font-size: 30px;
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 600;
+}
+
+.fakemenu {
+    position: absolute;
+    top: 110px;
+    right: 100px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.fakemenu::before,
+.fakemenu::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 25px;
+    width: 100%;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.fakemenu::after {
+    left: 50px;
+}
+
+.fakearrrow {
+    position: absolute;
+    top: 80px;
+    left: 60px;
+    width: 70px;
+    height: 70px;
+    clip-path: polygon(40% 0, 55% 0, 18% 45%, 100% 45%, 100% 55%, 18% 55%, 55% 100%, 40% 100%, 0 50%);
+    background-color: rgb(255, 255, 255);
+}
+
+.fakeBtns {
+    position: absolute;
+    top: 1670px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fakeBtns div {
+    margin: 0 10px;
+    background-color: #000;
+}
+
+.pre {
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(70% 30%, 70% 70%, 35% 50%, 35% 70%, 30% 70%, 30% 30%, 35% 30%, 35% 50%);
+}
+
+.start {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    clip-path: polygon(0 0, 35% 0, 35% 70%, 70% 50%, 35% 30%, 35% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.next {
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(30% 30%, 30% 70%, 65% 50%, 65% 70%, 70% 70%, 70% 30%, 65% 30%, 65% 50%);
+}
+
+.singerName_wrap {
+    position: absolute;
+    top: 1135px;
+    left: 15%;
+    width: 70%;
+    height: 70px;
+    overflow: hidden;
+}
+
+.singerName {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+    font-size: 40px;
+    line-height: 70px;
+    text-align: center;
+    color: #a5a5a5;
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 400;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    animation: marquee_singerName infinite linear alternate;
+    animation-duration: 5s;
+    animation-play-state: paused;
+}
+
+.musicName_wrap {
+    position: absolute;
+    top: 1200px;
+    left: 8%;
+    width: 84%;
+    height: 130px;
+    overflow: hidden;
+}
+
+.musicName {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    font-size: 100px;
+    line-height: 1;
+    text-align: center;
+    color: #000;
+    font-family: "Noto Sans SC", sans-serif;
+    font-weight: 300;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    animation: marquee_musicName infinite linear alternate;
+    animation-duration: 5s;
+    animation-play-state: paused;
+}
+
+
+
+.control_panel {
+    position: absolute;
+    top: 5px;
+    left: 1100px;
+    width: 600px;
+    height: 1915px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+label {
+    font-size: 40px;
+    color: #474747;
+    width: 540px;
+    height: 150px;
+    background-image: linear-gradient(to left top, #e7e7e7, #ffffff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+label input {
+    width: 100%;
+}
+
+#singerName,
+#musicName,
+#uploadImg,
+#uploadMusic,
+#uploadLogo,
+#uploadColor {
+    z-index: 100;
+    font-size: 40px;
+}
+
+.uploadImg {
+    height: 250px;
+}
+
+.uploadLogo {
+    height: 500px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: #474747;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 30px;
+    background: #c5c5c5;
+    border-radius: 3px;
+    box-shadow: #494949 1px 1px 5px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.uploadLogo>input[type="range"] {
+    margin-bottom: 10px;
+}
+
+.radio {
+    display: flex;
+    margin-top: 5px;
+}
+
+.radio label {
+    background: transparent;
+    border: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.radio label input {
+    width: 30px;
+    height: 30px;
+}
+
+.audio_control {
+    width: 540px;
+    height: 400px;
+    background-image: linear-gradient(to left top, #e7e7e7, #ffffff);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 0 30px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.audio_control>p {
+    color: #474747;
+    font-size: 50px;
+    padding: 0;
+    margin: 30px 0;
+    margin-right: 10px;
+}
+
+#audioVolume[type="range"] {
+    width: 79%;
+    margin: 60px 0;
+}
+
+
+#playBtn,
+#pauseBtn {
+    width: 49%;
+    height: 70px;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: #efefef;
+    border: #474747 1px solid;
+}
+
+#playBtn {
+    margin-right: 10px;
+}
+
+audio {
+    width: 100%;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-current-time-display {
+    display: none;
+}
+
+@keyframes CDplay {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

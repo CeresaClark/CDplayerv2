@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>CDplayerV2</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="wallpaper"></div>
+        <div class="circle"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+        <div class="CD">
+            <div class="CDrotate">
+                <img id="CDImg">
+                <div class="logowrap">
+                    <img id="logoImg">
+                </div>
+            </div>
+        </div>
+        <div class="gradient"></div>
+        <div class="wave">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="audio_progress">
+            <div id="progress_bg">
+                <div id="progress_bar"></div>
+            </div>
+            <div class="progress_dotBox">
+                <div id="progress_dot"></div>
+            </div>
+        </div>
+
+        <div class="timer">
+            <div id="nowTime">00:00</div>
+            <div id="allTime">00:00</div>
+        </div>
+
+        <div class="fakemenu"></div>
+        <div class="fakearrrow">←</div>
+
+        <div class="fakeBtns">
+            <div class="pre"></div>
+            <div class="start"></div>
+            <div class="next"></div>
+        </div>
+
+        <div class="singerName_wrap">
+            <p class="singerName">請輸入歌手名</p>
+        </div>
+
+        <div class="musicName_wrap">
+            <p class="musicName">請輸入歌名</p>
+        </div>
+
+    </div>
+
+    <div class="control_panel">
+        <label for="uploadMusic" class="uploadMusic">
+            選擇音檔
+            <input type="file" id="uploadMusic" name="uploadMusic" accept="audio/*" />
+        </label>
+
+        <label for="uploadImg" class="uploadImg">
+            選擇唱片圖檔
+            <input type="file" id="uploadImg" name="uploadImg" accept="image/*" />
+            左右位移
+            <input type="range" id="CDposition" max="100" value="50" />
+        </label>
+
+        <label  class="uploadLogo">
+            選擇logo圖檔
+            <input type="file" id="uploadLogo" name="uploadLogo" accept="image/*" />
+            上下位移
+            <input type="range" id="LogoPositionTop" value="0" max="100" min="-100" />
+            左右位移
+            <input type="range" id="LogoPositionLeft" value="0" max="100" min="-100" />
+            尺寸
+            <input type="range" id="LogoPositionSize" value="100" max="200" />
+
+            <div class="radio">
+                <label for="whiteShadow">
+                    <input type="radio" id="whiteShadow"  name="contact"/>
+                    白色陰影
+                </label>
+
+                <label for="blackShadow">
+                    <input type="radio" id="blackShadow"  name="contact"/>
+                    黑色陰影
+                </label>
+
+                <label for="noShadow">
+                    <input type="radio" id="noShadow"  name="contact"/>
+                    無陰影
+                </label>
+            </div>
+        </label>
+
+        <label for="uploadColor" class="uploadColor">
+            輸入代表色碼(hex)
+            <input type="text" id="uploadColor" name="uploadColor" placeholder="例:#9076b7" maxlength="7" />
+        </label>
+
+        <label for="uploadsingerName" class="uploadsingerName">
+            輸入原唱名字
+            <input type="text" id="singerName" placeholder="請輸入原唱名字" />
+        </label>
+
+        <label for="uploadmusicName" class="uploadmusicName">
+            輸入歌名
+            <input type="text" id="musicName" placeholder="請輸入歌曲名字" />
+        </label>
+
+        <div class="audio_control">
+            <button id="playBtn">播放</button>
+            <button id="pauseBtn">暫停</button>
+            <p>音量</p>
+            <input type="range" id="audioVolume" value="100" max="100" />
+            <audio crossorigin="anonymous" id="audio" controls></audio>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="//code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
